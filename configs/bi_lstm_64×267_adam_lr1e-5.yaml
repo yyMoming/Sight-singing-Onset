@@ -1,0 +1,65 @@
+AUTO_RESUME: False
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  DIR: fold_0
+  NEG_POS_RATE: 0.0
+  ROOT: /home/data/ywm_data/train_data/shuffle_data/sep_dataset/
+  TRAIN_SET: train
+  VALID_SET: valid
+DATA_DIR: /home/data/ywm_data/train_data/new_data_added/val_set/
+GPUS: (0, 1, 2, 3)
+LOG_DIR: /home/data/ywm_data/bi_lstm_onsetnet_output/log
+LOSS:
+  ALPHA: 5.0
+MODEL:
+  BI_LSTM:
+    lstm_hidden_dim: 512
+    lstm_input_dim: 256
+    lstm_num_layers: 2
+    lstm_output_dim: 32
+    pre_trained_onsetnet: ./Models/onset.pth
+  CBAM_ONSETNET:
+    config:
+      conv1: (25, 3)
+      conv2: (7, 3)
+      fc1: 1050
+      pool1: (3, 2)
+      pool2: (3, 1)
+    pad_length: 4
+    spec_style: cqt
+  INIT_WEIGHT: True
+  INPUT_SIZE: [64, 267]
+  NAME: bilstm
+  OUTPUT_SIZE: [56, 1]
+  PRETRAINED: ""
+OUTPUT_DIR: /home/data/ywm_data/bi_lstm_onsetnet_output/output
+PIN_MEMORY: False
+PRINT_FREQ: 50
+SPEC:
+  HOPSIZE: 512
+  SPEC_STYLE: cqt
+  SR: 44100
+TEST:
+  BATCH_SIZE_PER_GPU: 32
+  THRESHOLD: 0.5
+TRAIN:
+  BATCH_SIZE_PER_GPU: 64
+  BEGIN_EPOCH: 0
+  CHECKPOINT:
+  END_EPOCH: 61
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  LR: 1e-05
+  LR_FACTOR: 0.1
+  LR_STEP: [30, 50]
+  MOMENTUM: 0.9
+  NESTEROV: False
+  OPTIMIZER: adam
+  RESUME: False
+  SHUFFLE: True
+  THRESHOLD: 0.7
+  WD: 5e-05
+WORKERS: 0

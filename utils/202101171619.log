@@ -1,0 +1,4 @@
+2021-01-17 16:19:11,918 - utils.py[line:35] - INFO: this is a logger info message
+2021-01-17 16:19:11,918 - utils.py[line:36] - WARNING: this is a logger warning message
+2021-01-17 16:19:11,918 - utils.py[line:37] - ERROR: this is a logger error message
+2021-01-17 16:19:11,918 - utils.py[line:38] - CRITICAL: this is a logger critical message
